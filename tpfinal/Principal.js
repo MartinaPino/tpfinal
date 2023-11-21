@@ -1,14 +1,17 @@
 class Principal{
 constructor(){
  this.estado = "inicio";
-
+ this.objJuego = new PrincipalJuego();
+// this.objJuego.teclaPresionada(keyCode);
+ 
+ 
 }
  dibujar() {
     if (this.estado == "inicio") {
       this.inicio();
     } else if (this.estado == "creditos") {
       this.creditos();
-    } else if (this.estado == "pantalla1") {
+    } else if (this.estado == "pantalla1") { 
       this.pantalla1();
     } else if (this.estado == "pantalla2") {
       this.pantalla2();
@@ -16,24 +19,24 @@ constructor(){
       this.pantalla3();
     }else if (this.estado == "pantalla4") {
       this.pantalla4();
-  }else if (this.estado == "prejuego") {
-      this.prejuego();
-  }else if (this.estado == "juego") {
-      this.juego();
-  } else if (this.estado == "pantalla5") {
-      this.pantalla5();
-  }else if (this.estado == "pantalla6") {
-      this.pantalla6();
-  }else if (this.estado == "opcionA") {
-      this.opcionA();
-  } else if (this.estado == "opcionB") {
-      this.opcionB();
-  } else if (this.estado == "fin2") {
-      this.fin2();
-  }else if (this.estado == "pantalla7") {
-      this.pantalla7();
-  }else if (this.estado == "fin1") {
-      this.fin1();
+    }else if (this.estado == "prejuego") {
+        this.prejuego();
+    }else if (this.estado == "juego") {
+        this.objJuego.dibujarJuego();
+    } else if (this.estado == "pantalla5") {
+        this.pantalla5();
+    }else if (this.estado == "pantalla6") {
+        this.pantalla6();
+    }else if (this.estado == "opcionA") {
+        this.opcionA();
+    } else if (this.estado == "opcionB") {
+        this.opcionB();
+    } else if (this.estado == "fin2") {
+        this.fin2();
+    }else if (this.estado == "pantalla7") {
+        this.pantalla7();
+    }else if (this.estado == "fin1") {
+        this.fin1();
  }
  }
   
@@ -115,18 +118,16 @@ constructor(){
     text("juego", 280, 170 );
     pop();
   
-  
   }
   
   pantalla5(){
-push();
+  push();
      background(0);
      textAlign(CENTER);
    fill(255);
     text("pantalla5", 280, 170 );
     text("toca enter para continuar", 350, 300 );
     pop();
-  
   
   }
   
