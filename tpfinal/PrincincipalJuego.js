@@ -148,8 +148,6 @@ class PrincipalJuego {
 
     if (keyCode == ENTER && this.estadoJuego == "juego1") {
       this.estadoJuego = "juego2";
-      this.iniciarValores();
-      this.iniciarEnemigos();
     } else if (keyCode == ENTER && this.estadoJuego == "juego2") {
       this.estadoJuego = "juego3";
     } else if (keyCode == ENTER && this.estadoJuego == "ganastejuego") {
@@ -158,22 +156,7 @@ class PrincipalJuego {
       this.terminoJuego = true;  
   }
     this.dibujarJuego();
-  }
+  }    
   
-  iniciarValores(){
-    
-    
-    this.timer = 0;
-    this.timerSeg = 0;
-    this.enemi = [];
-    this.tocaron = 0;
-    this.terminoJuego = false;
-  }
-  
-  iniciarEnemigos(){
-     for (let i=0; i<7; i++) {
-      this.enemi[i] = new enemigo(535, 215+i*40);
-    }
-  }
 
 }

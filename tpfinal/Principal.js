@@ -193,42 +193,48 @@ constructor(){
 
     teclaPresionada(keyCode) {
     //this.personaje.teclaPresionada(keyCode);
-
-    if (keyCode == ENTER && this.estado == "inicio") {
-      this.estado = "pantalla1";
-    }else if (keyCode == CONTROL && this.estado == "inicio") {
-      this.estado = "creditos";
-    }else if (keyCode == CONTROL && this.estado == "creditos") {
-      this.estado = "inicio";
-    } else if (keyCode == ENTER && this.estado == "pantalla1") {
-      this.estado = "pantalla2";
-    } else if (keyCode == ENTER && this.estado == "pantalla2") {
-      this.estado = "pantalla3";
-    } else if (keyCode == SHIFT && this.estado == "pantalla3") {
-      this.estado = "pantalla4";
-    }else if (keyCode == CONTROL && this.estado == "pantalla3") {
-      this.estado = "prejuego";
-    }else if (keyCode == ENTER && this.estado == "prejuego") {
-      this.estado = "juego";
-    }else if (keyCode == ENTER && this.estado == "pantalla4") {
-      this.estado = "pantalla5";
-    }else if (keyCode == ENTER  && this.estado == "pantalla5") {
-      this.estado = "pantalla6";
-    }else if (keyCode == SHIFT && this.estado == "pantalla6") {
-      this.estado = "opcionA";
-    }else if (keyCode == CONTROL && this.estado == "pantalla6") {
-      this.estado = "opcionB";
-    }else if (keyCode == ENTER && this.estado == "opcionB") {
-      this.estado = "fin2";
-    }else if (keyCode == ENTER && this.estado == "fin2") {
-      this.estado = "inicio";
-    }else if (keyCode == ENTER && this.estado == "opcionA") {
-      this.estado = "pantalla7";
-    }else if (keyCode == ENTER && this.estado == "pantalla7") {
-      this.estado = "fin1";
-    }else if (keyCode == ENTER && this.estado == "fin1") {
-      this.estado = "inicio";
+    if(this.estado == "juego"){
+      this.objJuego.teclaPresionada(keyCode);
+    }else{
+       
+      if (keyCode == ENTER && this.estado == "inicio") {
+        this.estado = "pantalla1";
+      }else if (keyCode == CONTROL && this.estado == "inicio") {
+        this.estado = "creditos";
+      }else if (keyCode == CONTROL && this.estado == "creditos") {
+        this.estado = "inicio";
+      } else if (keyCode == ENTER && this.estado == "pantalla1") {
+        this.estado = "pantalla2";
+      } else if (keyCode == ENTER && this.estado == "pantalla2") {
+        this.estado = "pantalla3";
+      } else if (keyCode == SHIFT && this.estado == "pantalla3") {
+        this.estado = "pantalla4";
+      }else if (keyCode == CONTROL && this.estado == "pantalla3") {
+        this.estado = "prejuego";
+      }else if (keyCode == ENTER && this.estado == "prejuego") {
+        this.estado = "juego";
+      }else if (keyCode == ENTER && this.estado == "pantalla4") {
+        this.estado = "pantalla5";
+      }else if (keyCode == ENTER  && this.estado == "pantalla5") {
+        this.estado = "pantalla6";
+      }else if (keyCode == SHIFT && this.estado == "pantalla6") {
+        this.estado = "opcionA";
+      }else if (keyCode == CONTROL && this.estado == "pantalla6") {
+        this.estado = "opcionB";
+      }else if (keyCode == ENTER && this.estado == "opcionB") {
+        this.estado = "fin2";
+      }else if (keyCode == ENTER && this.estado == "fin2") {
+        this.estado = "inicio";
+      }else if (keyCode == ENTER && this.estado == "opcionA") {
+        this.estado = "pantalla7";
+      }else if (keyCode == ENTER && this.estado == "pantalla7") {
+        this.estado = "fin1";
+      }else if (keyCode == ENTER && this.estado == "fin1") {
+        this.estado = "inicio";
+      }
+    
     }
+   
   
    }
   
