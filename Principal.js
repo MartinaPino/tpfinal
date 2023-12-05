@@ -3,8 +3,8 @@ constructor(){
  this.estado = "inicio";
  this.objJuego = new PrincipalJuego();
  this.fondo = [];
-// this.objJuego.teclaPresionada(keyCode);
-this.carga();
+ this.fondoHistoria = [];
+ this.carga();
  
  
 }
@@ -53,6 +53,7 @@ this.carga();
     inicio() {
    push();
     background(0);
+    image(this.fondoHistoria[0], 0, 0, 500, 400);
     fill(255);
     textAlign(CENTER);
     text("inicio", 280, 230 );
@@ -63,6 +64,7 @@ this.carga();
    creditos(){
     push();
      background(0);
+     image(this.fondoHistoria[1], 0, 0, 500, 400);
    fill(255);
     text("creditos", 280, 170 );
       text("toca control para volver", 350, 300 );
@@ -73,6 +75,7 @@ this.carga();
    pantalla1(){
     push();
      background(0);
+     image(this.fondoHistoria[2], 0, 0, 500, 400);
      textAlign(CENTER);
    fill(255);
     text("pantalla1", 280, 170 );
@@ -83,6 +86,7 @@ this.carga();
    pantalla2(){
    push();
      background(0);
+     image(this.fondoHistoria[3], 0, 0, 500, 400);
    fill(255);
     text("pantalla2", 280, 170 );
      text("toca enter para continuar", 350, 300 );
@@ -93,6 +97,7 @@ this.carga();
    pantalla3(){
    push();
      background(0);
+     image(this.fondoHistoria[4], 0, 0, 500, 400);
      textAlign(CENTER);
    fill(255);
     text("pantalla3", 280, 170 );
@@ -104,6 +109,7 @@ this.carga();
   pantalla4(){
    push();
      background(0);
+     image(this.fondoHistoria[5], 0, 0, 500, 400);
      textAlign(CENTER);
    fill(255);
     text("pantalla4", 280, 170 );
@@ -114,13 +120,14 @@ this.carga();
   prejuego(){
    push();
      background(0);
+     image(this.fondoHistoria[10], 0, 0, 500, 400);
      textAlign(CENTER);
    fill(255);
     text("prejuego", 280, 170 );
     text("toca enter para continuar", 350, 300 );
     pop();
   }
-  pantalla5(){
+  pantalla5(){ //sacar esta
   push();
      background(0);
      textAlign(CENTER);
@@ -134,6 +141,7 @@ this.carga();
   pantalla6(){
   push();
      background(0);
+     image(this.fondoHistoria[6], 0, 0, 500, 400);
      textAlign(CENTER);
    fill(255);
     text("pantalla6", 280, 170 );
@@ -146,6 +154,7 @@ this.carga();
   opcionA(){
      push();
      background(0);
+     image(this.fondoHistoria[7], 0, 0, 500, 400);
      textAlign(CENTER);
    fill(255);
     text("opcionA", 280, 170 );
@@ -153,7 +162,7 @@ this.carga();
     pop();
   
   }
-  opcionB(){
+  opcionB(){ //sacar esta
      push();
      background(0);
      textAlign(CENTER);
@@ -165,13 +174,14 @@ this.carga();
   fin2(){
      push();
      background(0);
+     image(this.fondoHistoria[9], 0, 0, 500, 400);
      textAlign(CENTER);
    fill(255);
     text("fin2", 280, 170 );
      text("toca enter para volver al inicio", 350, 300 );
     pop();
   }
-  pantalla7(){
+  pantalla7(){ //sacar esta
      push();
      background(0);
      textAlign(CENTER);
@@ -183,6 +193,7 @@ this.carga();
   fin1(){
      push();
      background(0);
+     image(this.fondoHistoria[8], 0, 0, 500, 400);
      textAlign(CENTER);
    fill(255);
     text("fin1", 280, 170 );
@@ -326,7 +337,9 @@ this.carga();
     for (let i=0; i<5; i++) {
       this.fondo.push(loadImage('data/fondo' +i+ '.png'));
     }
-   
+    for (let i=0; i<11; i++) {
+      this.fondoHistoria.push(loadImage('data/fondoHistoria' +i+ '.jpeg'));
+    }
   
    
     }
