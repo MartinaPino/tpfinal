@@ -1,4 +1,4 @@
-//Pratto Priscila, Pino Martina
+//Pino Martina, Pratto Priscila
 //tpfinal, comision 1
 
 

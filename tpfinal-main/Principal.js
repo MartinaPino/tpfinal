@@ -60,8 +60,8 @@ class Principal {
     rect(40, 325, 125, 40);
     textAlign(CENTER);
     fill(255);
-    text("control para ir a los creditos", 370, 350 );
-    text("control para ir a los creditos", 370, 351 );
+    text("derecha para los creditos", 370, 350 );
+    text("derecha para los creditos", 370, 351 );
     text("enter para continuar", 100, 350 );
     text("enter para continuar", 100, 351 );
     pop();
@@ -75,10 +75,10 @@ class Principal {
     rect(170, 325, 170, 40);
     fill(255);
     textAlign(CENTER);
-    text("Pratto Priscila y Pino Martina", 250, 200 );
-    text("Pratto Priscila y Pino Martina", 250, 201);
-    text("toca control para volver", 250, 350 );
-    text("toca control para volver", 250, 351 );
+    text("Pino Martina y Pratto Priscila", 250, 200 );
+    text("Pino Martina y Pratto Priscila", 250, 201);
+    text("izquierda para volver", 250, 350 );
+    text("izquierda para volver", 250, 351 );
     pop();
   }
 
@@ -94,8 +94,8 @@ class Principal {
     fill(255);
     text("Eckels se une a una expedición que permite\n a los cazadores viajar al pasado\n y cazar dinosaurios ", 150, 180 );
     text("Eckels se une a una expedición que permite\n a los cazadores viajar al pasado\n y cazar dinosaurios ", 150, 181 );
-    text("toca enter para continuar", 370, 350 );
-    text("toca enter para continuar", 370, 351 );
+    text("enter para continuar", 370, 350 );
+    text("enter para continuar", 370, 351 );
     pop();
   }
   
@@ -111,8 +111,8 @@ class Principal {
     fill(255);
     text("Antes de emprender en el viaje les advierten que deben seguir\n estrictamente el camino trazado para evitar alterar el tiempo", 250, 200 );
     text("Antes de emprender en el viaje les advierten que deben seguir\n estrictamente el camino trazado para evitar alterar el tiempo", 250, 201 );
-    text("toca enter para continuar", 250, 350 );
-    text("toca enter para continuar", 250, 351 );
+    text("enter para continuar", 250, 350 );
+    text("enter para continuar", 250, 351 );
     pop();
   }
 
@@ -127,8 +127,8 @@ class Principal {
     textAlign(CENTER);
     fill(255);
     text("En el camino te encontras con una\n  mariposa prehistorica hermosa", 360, 50 );
-    text("toca shift para \n seguir a la mariposa", 100, 350 );
-    text("toca control para\n seguir con tu camino", 365, 350 );
+    text("izquierda para \n seguir a la mariposa", 100, 350 );
+    text("derecha para\n seguir con tu camino", 365, 350 );
     pop();
   }
 
@@ -142,7 +142,7 @@ class Principal {
     textAlign(CENTER);
     fill(255);
     text("La mariposa te adentra al bosque", 250, 200 );
-    text("toca enter para continuar", 250, 350 );
+    text("enter para continuar", 250, 350 );
     pop();
   }
   prejuego() {
@@ -155,7 +155,7 @@ class Principal {
     textAlign(CENTER);
     fill(255);
     text("En el camino ves una erupción volcanica.\nTienes que llegar a la maquina del tiempo", 250, 170 );
-    text("toca enter para continuar", 250, 350 );
+    text("enter para continuar", 250, 350 );
     pop();
   }
 
@@ -171,8 +171,8 @@ class Principal {
     textAlign(CENTER);
     fill(255);
     text("La mariposa se queda quieta,\n sientes el deseo de tocarla", 260, 100 );
-    text("toca shift para\n tocar a la mariposa", 90, 350 );
-    text("toca control para\n volver con tu camino", 390, 350 );
+    text("izquierda para\n tocar a la mariposa", 90, 350 );
+    text("derecha para\n volver con tu camino", 390, 350 );
     pop();
   }
   opcionA() {
@@ -185,7 +185,7 @@ class Principal {
     textAlign(CENTER);
     fill(255);
     text("La mariposa se pone agresiva debes defederte", 250, 200 );
-    text("toca enter para continuar", 260, 350 );
+    text("enter para continuar", 260, 350 );
     pop();
   }
 
@@ -199,7 +199,7 @@ class Principal {
     textAlign(CENTER);
     fill(255);
     text("Terminas de hacer tu mision",245, 230 );
-    text("toca enter para volver al inicio", 245, 350 );
+    text("enter para volver al inicio", 245, 350 );
     pop();
   }
 
@@ -213,7 +213,7 @@ class Principal {
     textAlign(CENTER);
     fill(255);
     text("Te das cuenta que alteraste todo\n el futuro matandola ", 240, 35 );
-    text("toca enter para volver al inicio", 250, 350 );
+    text("enter para volver al inicio", 250, 350 );
     pop();
   }
 
@@ -239,6 +239,7 @@ class Principal {
   }
 
   juego2() {
+    push();
     image(this.fondo[0], 0, -100, 500, 530);
     this.objJuego.tocado();
     this.objJuego.timer++;
@@ -247,7 +248,6 @@ class Principal {
       this.objJuego.timer = 0;
     }
     text("tiempo: "+this.objJuego.timerSeg, 25, 10);
-
     this.objJuego.personaje.dibujar();
     for (let i=0; i<5; i++) {
       this.objJuego.enemi[i].dibujarEnemigo();
@@ -256,10 +256,10 @@ class Principal {
     if (this.objJuego.tocaron == 1) {
       this.estado = "perdistejuego";
     }
-
     if (this.objJuego.timerSeg==20) {
       this.estado = "ganastejuego";
     }
+    pop();
   }
 
   pantallaBuena() { // estado 3
@@ -293,23 +293,23 @@ class Principal {
 
     if (keyCode == ENTER && this.estado == "inicio") {
       this.estado = "pantalla1";
-    } else if (keyCode == CONTROL && this.estado == "inicio") {
+    } else if (keyCode == RIGHT_ARROW && this.estado == "inicio") {
       this.estado = "creditos";
-    } else if (keyCode == CONTROL && this.estado == "creditos") {
+    } else if (keyCode == LEFT_ARROW && this.estado == "creditos") {
       this.estado = "inicio";
     } else if (keyCode == ENTER && this.estado == "pantalla1") {
       this.estado = "pantalla2";
     } else if (keyCode == ENTER && this.estado == "pantalla2") {
       this.estado = "pantalla3";
-    } else if (keyCode == SHIFT && this.estado == "pantalla3") {
+    } else if (keyCode == LEFT_ARROW && this.estado == "pantalla3") {
       this.estado = "pantalla4";
-    } else if (keyCode == CONTROL && this.estado == "pantalla3") {
+    } else if (keyCode == RIGHT_ARROW && this.estado == "pantalla3") {
       this.estado = "prejuego";
     } else if (keyCode == ENTER && this.estado == "pantalla4") {
       this.estado = "pantalla5";
-    } else if (keyCode == SHIFT && this.estado == "pantalla5") {
+    } else if (keyCode == LEFT_ARROW && this.estado == "pantalla5") {
       this.estado = "opcionA";
-    } else if (keyCode == CONTROL && this.estado == "pantalla5") {
+    } else if (keyCode == RIGHT_ARROW && this.estado == "pantalla5") {
       this.estado = "fin2";
     } else if (keyCode == ENTER && this.estado == "fin2") {
       this.estado = "inicio";
